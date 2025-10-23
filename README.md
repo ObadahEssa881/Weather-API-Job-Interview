@@ -46,13 +46,16 @@ GET /api/weather/current?city=Berlin
 ```
 ## ⚙️ Setup Instructions
 1. Clone Repository
-git clone https://github.com/<your-username>/weather-api.git
+git clone https://github.com/ObadahEssa881/weather-api.git
+
 cd weather-api
 
 3. Install Dependencies
+
 npm install
 
 5. Create .env File
+
 PORT=4000
 WEATHER_API_BASE=https://api.openweathermap.org/data/2.5
 WEATHER_API_KEY=your_real_openweather_api_key_here
