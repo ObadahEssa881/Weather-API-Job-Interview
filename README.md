@@ -76,6 +76,7 @@ Copy code
   "weatherDescription": "scattered clouds",
   "humidityPercentage": 87
 }
+```
 ⚙️ Setup Instructions
 1. Clone Repository
 bash
