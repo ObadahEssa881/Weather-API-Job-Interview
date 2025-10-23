@@ -2,9 +2,6 @@
 
 A small backend service built with **Node.js + TypeScript + Express** for fetching and caching live weather data from the **OpenWeatherMap API**.
 
-This project was developed as part of a **backend developer technical task** for a company that specializes in **financial & wallet-based systems**.  
-The purpose is to demonstrate production-ready code quality, API integration, caching, validation, and structured backend architecture.
-
 ---
 
 ## 🚀 Overview
@@ -13,8 +10,6 @@ The service exposes a single REST endpoint:
 
 GET /api/weather/current?city={cityName}
 
-markdown
-Copy code
 
 It retrieves current weather data for a given city using the **OpenWeatherMap API**, applies validation and caching, and returns a cleaned response in a consistent JSON format.
 
@@ -32,41 +27,13 @@ It retrieves current weather data for a given city using the **OpenWeatherMap AP
 - ✅ **Environment variable management** using `.env`  
 - ✅ **Clean, modular architecture** — separation of client / service / controller / middleware
 
----
 
-## 🏗️ Architecture
-
-src/
-├── clients/
-│ └── externalWeatherClient.ts # Communicates with OpenWeather API
-├── controllers/
-│ └── weatherController.ts # Handles HTTP requests/responses
-├── middlewares/
-│ ├── errorHandler.ts # Global error middleware
-│ └── validateQuery.ts # Zod-based query validation
-├── routes/
-│ └── weatherRoutes.ts # Route definitions
-├── services/
-│ └── weatherService.ts # Business logic & data transformation
-├── types/
-│ ├── externalWeather.d.ts # External API response type
-│ └── weather.d.ts # Internal DTO type
-├── utils/
-│ └── cache.ts # In-memory cache + helpers
-└── index.ts # App entry point
-
-yaml
-Copy code
-
----
 
 ## 🧩 API Response Example
 
 **Request:**
 GET /api/weather/current?city=Berlin
 
-css
-Copy code
 
 **Response:**
 ```json
@@ -77,33 +44,30 @@ Copy code
   "humidityPercentage": 87
 }
 ```
-⚙️ Setup Instructions
+## ⚙️ Setup Instructions
 1. Clone Repository
-bash
-Copy code
 git clone https://github.com/<your-username>/weather-api.git
 cd weather-api
-2. Install Dependencies
-bash
-Copy code
+
+3. Install Dependencies
 npm install
-3. Create .env File
-bash
-Copy code
+
+5. Create .env File
 PORT=4000
 WEATHER_API_BASE=https://api.openweathermap.org/data/2.5
 WEATHER_API_KEY=your_real_openweather_api_key_here
+
 ⚠️ You can get a free API key by signing up at https://openweathermap.org/api.
 
-4. Run in Development
-bash
-Copy code
+7. Run in Development
+
 npm run dev
+
 5. Build for Production
-bash
-Copy code
+
 npm run build
 npm start
+
 🧠 How It Works
 The client sends a GET request with a city query.
 
@@ -125,7 +89,7 @@ Any errors are passed to the global error handler:
 
 500 → internal server errors
 
-🧱 Technologies Used
+## 🧱 Technologies Used
 Tool	Purpose
 Node.js	Runtime environment
 TypeScript	Static typing and compile-time safety
@@ -135,14 +99,14 @@ Zod	Schema-based validation
 Morgan	Request logger
 Dotenv	Environment variable management
 
-💡 Example Error Responses
+## 💡 Example Error Responses
 Scenario	Response Code	Example
 Missing city parameter	400	{ "error": "Missing city parameter" }
 Invalid city (not found)	404	{ "error": "city not found" }
 API unreachable	404	{ "error": "Resource not found (upstream unreachable)" }
 Unexpected error	500	{ "error": "Internal Server Error" }
 
-🧠 Key Concepts Demonstrated
+## 🧠 Key Concepts Demonstrated
 Async/Await & Promises for clean asynchronous flow
 
 Layered architecture (Controller → Service → Client → Utility)
