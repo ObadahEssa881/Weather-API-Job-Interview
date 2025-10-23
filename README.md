@@ -50,11 +50,11 @@ git clone https://github.com/ObadahEssa881/weather-api.git
 
 cd weather-api
 
-3. Install Dependencies
+2. Install Dependencies
 
 npm install
 
-5. Create .env File
+3. Create .env File
 
 PORT=4000
 WEATHER_API_BASE=https://api.openweathermap.org/data/2.5
@@ -62,7 +62,7 @@ WEATHER_API_KEY=your_real_openweather_api_key_here
 
 ⚠️ You can get a free API key by signing up at https://openweathermap.org/api.
 
-7. Run in Development
+4. Run in Development
 
 npm run dev
 
@@ -71,7 +71,7 @@ npm run dev
 npm run build
 npm start
 
-🧠 How It Works
+## 🧠 How It Works
 The client sends a GET request with a city query.
 
 Input is validated by Zod (validateCityQuery middleware).
